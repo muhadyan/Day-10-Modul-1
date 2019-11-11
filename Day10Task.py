@@ -1,4 +1,3 @@
-'''
 class student:
     def __init__(self, nama, usia):
         self.nama = nama
@@ -35,16 +34,35 @@ class Persegi:
 
 persegiA = Persegi(4)
 persegiB = Persegi(8)
-persegiC = Persegi(10)
+persegiC = Persegi(12)
 
 print(vars(persegiA))
 print(vars(persegiB))
 print(vars(persegiC))
-'''
+
 # bikin program yg membuat angka biasa menjadi angka Romawi
-class keRomawi():
+class Romawi:
+    def keRomawi(self, num):
+        angka = [
+            1000, 900, 500, 400,
+            100, 90, 50, 40,
+            10, 9, 5, 4,
+            1
+            ]
+        simbol = [
+            "M", "CM", "D", "CD",
+            "C", "XC", "L", "XL",
+            "X", "IX", "V", "IV",
+            "I"
+            ]
+        angRom = ''
+        i = 0
+        while  num > 0:
+            for a in range(int(num / angka[i])):
+                angRom += simbol[i]
+                num -= angka[i]
+            i += 1
+        return angRom
 
 
-# keRomawi(1) ==> I
-# keRomawi(2) ==> II
-# dst
+print(Romawi().keRomawi(498))
